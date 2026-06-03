@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fern · Dashboard</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="app-shell">
+  <!-- ===== Sidebar ===== -->
+  <aside class="app-side">
+    <a class="app-side-brand" href="dashboard.html">
+      <span class="app-side-mark" aria-hidden="true"></span>
+      <span>Fern</span>
+    </a>
+    <nav class="app-side-nav" aria-label="App navigation">
+      <a class="app-side-link active" href="dashboard.html"><span data-icon="layout-dashboard"></span><span>Dashboard</span></a>
+      <a class="app-side-link" href="post-a-role.html"><span data-icon="plus"></span><span>Post a role</span></a>
+      <a class="app-side-link" href="shortlist.html"><span data-icon="users"></span><span>Applicants</span></a>
+      <a class="app-side-link" href="shortlist.html"><span data-icon="star"></span><span>Shortlist</span></a>
+      <a class="app-side-link" href="roles.html"><span data-icon="briefcase"></span><span>Roles</span></a>
+      <div class="app-side-rule"></div>
+      <a class="app-side-link" href="#"><span data-icon="bar-chart-3"></span><span>Insights</span></a>
+      <a class="app-side-link" href="#"><span data-icon="settings"></span><span>Account</span></a>
+    </nav>
+    <div class="app-side-callout">
+      <p>We go through hundreds of applications so you don't have to.<em>That's the whole idea.</em></p>
+      <div class="app-side-callout-mark" aria-hidden="true"></div>
+    </div>
+  </aside>
+
+  <!-- ===== Main ===== -->
+  <div class="app-main">
+    <header class="app-topbar">
+      <div class="app-topbar-titles">
+        <h1 class="app-title">Welcome back, <em>Sarah</em></h1>
+        <p class="app-sub">Here's what's happening with your hiring.</p>
+      </div>
+      <div class="app-topbar-meta">
+        <a class="app-roles-pill" href="roles.html"><span class="placeholder-data">3 roles active</span></a>
+        <a class="app-user-chip" href="#">
+          <div class="avatar" aria-hidden="true">SP</div>
+          <span class="name placeholder-data">Sarah P.</span>
+          <span data-icon="chevron-down"></span>
+        </a>
+      </div>
+    </header>
+
+    <main class="app-content">
+
+      <!-- TODO: Replace with Airtable API call — active role banner -->
+      <section class="role-banner" aria-label="Active role">
+        <div class="role-banner-icon" aria-hidden="true"><span data-icon="briefcase"></span></div>
+        <div class="role-banner-body">
+          <h2 class="role-banner-title"><span class="placeholder-data">Barista – Ponsonby Café</span></h2>
+          <div class="role-banner-meta">
+            <span class="placeholder-data">84 applications</span>
+            <span class="dot"></span>
+            <span class="placeholder-data">3 shortlisted</span>
+            <span class="dot"></span>
+            <span class="placeholder-data">Posted 3 days ago</span>
+          </div>
+        </div>
+        <div class="role-banner-actions">
+          <a class="btn btn-primary" href="shortlist.html">View shortlist</a>
+          <a class="btn btn-secondary" href="post-a-role.html">Edit role</a>
+          <button class="role-banner-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+        </div>
+      </section>
+
+      <div class="dash-grid">
+
+        <!-- ===== Top match card ===== -->
+        <!-- TODO: Replace with Airtable API call — top match applicant -->
+        <article class="top-match-card" id="applicant-list">
+          <div class="top-match-badge"><span data-icon="star"></span> Top Match</div>
+          <div class="top-match-row">
+            <div class="top-match-left">
+              <h2 class="top-match-name"><span class="placeholder-data">Emma R.</span></h2>
+              <div class="top-match-score"><span class="placeholder-data">92%</span> <span>match</span></div>
+              <div class="top-match-chips">
+                <span class="check-chip"><span data-icon="check"></span> <span class="placeholder-data">Food Safety Cert</span></span>
+                <span class="check-chip"><span data-icon="check"></span> <span class="placeholder-data">3+ years experience</span></span>
+                <span class="check-chip"><span data-icon="check"></span> <span class="placeholder-data">Weekend availability</span></span>
+              </div>
+              <p class="top-match-blurb"><span class="placeholder-data">Strong café experience, all certifications checked, and available weekends. Ready to interview.</span></p>
+            </div>
+            <div class="top-match-right">
+              <!-- Donut chart for 92% match -->
+              <div class="donut" style="width:156px;height:156px" aria-label="92% match score">
+                <svg width="156" height="156" viewBox="0 0 156 156" aria-hidden="true">
+                  <circle cx="78" cy="78" r="73" fill="none" stroke="var(--sage-pale)" stroke-width="10"/>
+                  <circle cx="78" cy="78" r="73" fill="none" stroke="var(--forest)" stroke-width="10"
+                    stroke-linecap="round"
+                    stroke-dasharray="458.67"
+                    stroke-dashoffset="36.69"
+                    transform="rotate(-90 78 78)"/>
+                </svg>
+                <div class="donut-label">
+                  <div class="donut-num"><span class="placeholder-data">92%</span></div>
+                  <div class="donut-sub">match score</div>
+                </div>
+              </div>
+              <div class="top-match-cta">
+                <a class="btn btn-primary" href="applicant.html">View profile</a>
+                <button class="btn btn-secondary">Invite to interview</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== Right side cards ===== -->
+        <aside class="dash-side">
+          <article class="side-card post-card">
+            <div class="side-card-iconlg" aria-hidden="true"><span data-icon="plus"></span></div>
+            <h3 class="side-card-title">Post a new role</h3>
+            <p class="side-card-sub">Create a new job listing in minutes.</p>
+            <a class="btn btn-primary side-card-cta" href="post-a-role.html">Post a role</a>
+          </article>
+
+          <a class="side-card linkrow" href="shortlist.html">
+            <div class="side-card-icon" aria-hidden="true"><span data-icon="users"></span></div>
+            <div class="linkrow-body">
+              <h3 class="side-card-title">View all applicants</h3>
+              <p class="side-card-sub">See everyone who has applied across your roles.</p>
+              <!-- TODO: Replace with Airtable API call — applicant count -->
+              <div class="linkrow-stat">
+                <span class="num placeholder-data">84</span>
+                <span class="lbl">total applicants</span>
+              </div>
+            </div>
+            <span data-icon="chevron-right" class="linkrow-chev"></span>
+          </a>
+
+          <a class="side-card linkrow" href="roles.html">
+            <div class="side-card-icon" aria-hidden="true"><span data-icon="bookmark"></span></div>
+            <div class="linkrow-body">
+              <h3 class="side-card-title">Saved roles</h3>
+              <p class="side-card-sub">Reuse and repost your previous job listings.</p>
+              <!-- TODO: Replace with Airtable API call — saved role count -->
+              <div class="linkrow-stat">
+                <span class="num placeholder-data">7</span>
+                <span class="lbl">saved roles</span>
+              </div>
+            </div>
+            <span data-icon="chevron-right" class="linkrow-chev"></span>
+          </a>
+        </aside>
+
+        <!-- ===== Shortlist strip ===== -->
+        <!-- TODO: Replace with Airtable API call — shortlisted candidates -->
+        <section class="shortlist-strip">
+          <div class="shortlist-strip-head">
+            <h2 class="strip-h2">Your shortlist</h2>
+            <a class="strip-link" href="shortlist.html">View all shortlist <span data-icon="arrow-right"></span></a>
+          </div>
+          <div class="shortlist-cards" role="list">
+            <article class="cand-card" role="listitem">
+              <header class="cand-card-head">
+                <span class="cand-star" aria-hidden="true"><span data-icon="star"></span></span>
+                <div>
+                  <div class="cand-name placeholder-data">Liam T.</div>
+                  <div class="cand-score placeholder-data">84% match</div>
+                </div>
+                <button class="cand-bookmark" aria-label="Save Liam T."><span data-icon="bookmark"></span></button>
+              </header>
+              <div class="cand-chips"><span class="tag placeholder-data">2+ yrs exp</span><span class="tag placeholder-data">Food Safety</span></div>
+              <p class="cand-note placeholder-data">Great experience, available weekends.</p>
+            </article>
+            <article class="cand-card" role="listitem">
+              <header class="cand-card-head">
+                <span class="cand-star" aria-hidden="true"><span data-icon="star"></span></span>
+                <div>
+                  <div class="cand-name placeholder-data">Sophie M.</div>
+                  <div class="cand-score placeholder-data">78% match</div>
+                </div>
+                <button class="cand-bookmark" aria-label="Save Sophie M."><span data-icon="bookmark"></span></button>
+              </header>
+              <div class="cand-chips"><span class="tag placeholder-data">2+ yrs exp</span><span class="tag placeholder-data">Weekend</span></div>
+              <p class="cand-note placeholder-data">Good experience, missing First Aid cert.</p>
+            </article>
+            <article class="cand-card" role="listitem">
+              <header class="cand-card-head">
+                <span class="cand-star" aria-hidden="true"><span data-icon="star"></span></span>
+                <div>
+                  <div class="cand-name placeholder-data">Noah P.</div>
+                  <div class="cand-score placeholder-data">72% match</div>
+                </div>
+                <button class="cand-bookmark" aria-label="Save Noah P."><span data-icon="bookmark"></span></button>
+              </header>
+              <div class="cand-chips"><span class="tag placeholder-data">1+ yr exp</span><span class="tag placeholder-data">Food Safety</span></div>
+              <p class="cand-note placeholder-data">Limited experience but strong attitude.</p>
+            </article>
+            <article class="cand-card" role="listitem">
+              <header class="cand-card-head">
+                <span class="cand-star" aria-hidden="true"><span data-icon="star"></span></span>
+                <div>
+                  <div class="cand-name placeholder-data">Chloe A.</div>
+                  <div class="cand-score placeholder-data">68% match</div>
+                </div>
+                <button class="cand-bookmark" aria-label="Save Chloe A."><span data-icon="bookmark"></span></button>
+              </header>
+              <div class="cand-chips"><span class="tag placeholder-data">Weekends</span></div>
+              <p class="cand-note placeholder-data">Food Safety cert not uploaded.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== KPI row ===== -->
+        <!-- TODO: Replace with Airtable API call — role KPIs -->
+        <section class="kpi-row" aria-label="Key metrics">
+          <article class="kpi-card">
+            <div class="kpi-icon" aria-hidden="true"><span data-icon="clipboard-list"></span></div>
+            <div class="kpi-body">
+              <div class="kpi-num placeholder-data">84</div>
+              <div class="kpi-label">applications received</div>
+              <div class="kpi-sub placeholder-data">For Barista – Ponsonby Café</div>
+            </div>
+          </article>
+          <article class="kpi-card">
+            <div class="kpi-icon" aria-hidden="true"><span data-icon="star"></span></div>
+            <div class="kpi-body">
+              <div class="kpi-num placeholder-data">3</div>
+              <div class="kpi-label">top candidates</div>
+              <div class="kpi-sub">Ready for interview</div>
+            </div>
+          </article>
+          <article class="kpi-card">
+            <div class="kpi-icon" aria-hidden="true"><span data-icon="pie-chart"></span></div>
+            <div class="kpi-body">
+              <div class="kpi-num placeholder-data">61%</div>
+              <div class="kpi-label">missing required certs</div>
+              <div class="kpi-sub">Filtered out by Fern</div>
+            </div>
+          </article>
+        </section>
+
+      </div><!-- /.dash-grid -->
+    </main>
+  </div><!-- /.app-main -->
+</div><!-- /.app-shell -->
+
+<script src="main.js" defer></script>
+</body>
+</html>

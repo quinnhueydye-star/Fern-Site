@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fern · Shortlist</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="app-shell">
+  <!-- ===== Sidebar ===== -->
+  <aside class="app-side">
+    <a class="app-side-brand" href="dashboard.html">
+      <span class="app-side-mark" aria-hidden="true"></span>
+      <span>Fern</span>
+    </a>
+    <nav class="app-side-nav" aria-label="App navigation">
+      <a class="app-side-link" href="dashboard.html"><span data-icon="layout-dashboard"></span><span>Dashboard</span></a>
+      <a class="app-side-link" href="post-a-role.html"><span data-icon="plus"></span><span>Post a role</span></a>
+      <a class="app-side-link" href="shortlist.html"><span data-icon="users"></span><span>Applicants</span></a>
+      <a class="app-side-link active" href="shortlist.html"><span data-icon="star"></span><span>Shortlist</span></a>
+      <a class="app-side-link" href="roles.html"><span data-icon="briefcase"></span><span>Roles</span></a>
+      <div class="app-side-rule"></div>
+      <a class="app-side-link" href="#"><span data-icon="bar-chart-3"></span><span>Insights</span></a>
+      <a class="app-side-link" href="#"><span data-icon="settings"></span><span>Account</span></a>
+    </nav>
+    <div class="app-side-callout">
+      <p>We go through hundreds of applications so you don't have to.<em>That's the whole idea.</em></p>
+      <div class="app-side-callout-mark" aria-hidden="true"></div>
+    </div>
+  </aside>
+
+  <!-- ===== Main ===== -->
+  <div class="app-main">
+    <header class="app-topbar">
+      <div class="app-topbar-titles">
+        <h1 class="app-title">Shortlist</h1>
+        <p class="app-sub"><span class="placeholder-data">All applicants for Barista – Ponsonby Café</span></p>
+      </div>
+      <div class="app-topbar-meta">
+        <a class="app-roles-pill" href="roles.html"><span class="placeholder-data">3 roles active</span></a>
+        <a class="app-user-chip" href="#">
+          <div class="avatar" aria-hidden="true">SP</div>
+          <span class="name placeholder-data">Sarah P.</span>
+          <span data-icon="chevron-down"></span>
+        </a>
+      </div>
+    </header>
+
+    <main class="app-content">
+
+      <!-- TODO: Replace with Airtable API call — role stats -->
+      <section class="stat-strip" aria-label="Role statistics">
+        <div class="stat-cell">
+          <div class="stat-cell-icon" aria-hidden="true"><span data-icon="users"></span></div>
+          <div>
+            <div class="stat-cell-num placeholder-data">84</div>
+            <div class="stat-cell-label">Total applicants</div>
+          </div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell-icon" aria-hidden="true"><span data-icon="star"></span></div>
+          <div>
+            <div class="stat-cell-num placeholder-data">10</div>
+            <div class="stat-cell-label">Shortlisted</div>
+          </div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell-icon" aria-hidden="true"><span data-icon="check-circle"></span></div>
+          <div>
+            <div class="stat-cell-num placeholder-data">3</div>
+            <div class="stat-cell-label">Invited to interview</div>
+          </div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-cell-icon" aria-hidden="true"><span data-icon="x-circle"></span></div>
+          <div>
+            <div class="stat-cell-num placeholder-data">61%</div>
+            <div class="stat-cell-label">Missing required certs</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TODO: Replace with Airtable API call — shortlist table rows -->
+      <div class="applicants-card" id="shortlist-table">
+        <header class="applicants-head">
+          <div class="search-input">
+            <span data-icon="search"></span>
+            <input type="search" placeholder="Search applicants…" aria-label="Search applicants"/>
+          </div>
+          <div class="select-chip">
+            <select aria-label="Filter by score">
+              <option value="all">All scores</option>
+              <option value="high">80% and up</option>
+              <option value="medium">60 – 79%</option>
+              <option value="low">Under 60%</option>
+            </select>
+            <span data-icon="chevron-down"></span>
+          </div>
+          <div class="select-chip">
+            <select aria-label="Filter by status">
+              <option value="all">All status</option>
+              <option value="shortlisted">Shortlisted</option>
+              <option value="review">In review</option>
+              <option value="not">Not shortlisted</option>
+            </select>
+            <span data-icon="chevron-down"></span>
+          </div>
+          <div class="select-chip">
+            <select aria-label="Filter by tag">
+              <option value="all">All tags</option>
+              <option value="food-safety">Food Safety</option>
+              <option value="first-aid">First Aid</option>
+              <option value="weekend">Weekend</option>
+            </select>
+            <span data-icon="chevron-down"></span>
+          </div>
+          <button class="btn btn-secondary export-btn"><span data-icon="download"></span> Export shortlist</button>
+        </header>
+
+        <table class="applicants-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Applicant</th>
+              <th class="th-sort"><span>Match score <span data-icon="arrow-down"></span></span></th>
+              <th>Experience</th>
+              <th>Key strengths</th>
+              <th>Certifications</th>
+              <th>Status</th>
+              <th>Added</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- TODO: Replace with Airtable API call — each row is one applicant -->
+            <tr>
+              <td><span class="rank-pill">1</span></td>
+              <td class="td-name placeholder-data">Emma R.</td>
+              <td><div class="td-score tier-top">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-top" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="8.17" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">92%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">3+ years</td>
+              <td class="td-strengths placeholder-data">Café experience, weekend availability, customer service</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip ok"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill shortlisted placeholder-data">Shortlisted</span></td>
+              <td class="td-muted placeholder-data">2 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Emma R."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">2</span></td>
+              <td class="td-name placeholder-data">Liam T.</td>
+              <td><div class="td-score tier-top">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-top" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="16.34" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">84%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">2+ years</td>
+              <td class="td-strengths placeholder-data">Strong barista skills, reliable, team player</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip ok"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill shortlisted placeholder-data">Shortlisted</span></td>
+              <td class="td-muted placeholder-data">2 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Liam T."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">3</span></td>
+              <td class="td-name placeholder-data">Sophie M.</td>
+              <td><div class="td-score tier-high">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-high" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="22.46" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">78%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">2+ years</td>
+              <td class="td-strengths placeholder-data">Great communication, café experience, quick learner</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip ok"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill shortlisted placeholder-data">Shortlisted</span></td>
+              <td class="td-muted placeholder-data">3 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Sophie M."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">4</span></td>
+              <td class="td-name placeholder-data">Noah P.</td>
+              <td><div class="td-score tier-high">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-high" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="28.59" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">72%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">1+ year</td>
+              <td class="td-strengths placeholder-data">Positive attitude, coffee knowledge, keen to grow</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip ok"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill shortlisted placeholder-data">Shortlisted</span></td>
+              <td class="td-muted placeholder-data">3 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Noah P."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">5</span></td>
+              <td class="td-name placeholder-data">Chloe A.</td>
+              <td><div class="td-score tier-mid">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-mid" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="32.67" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">68%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">2+ years</td>
+              <td class="td-strengths placeholder-data">Customer focused, calm under pressure</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip warn"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 8h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill review placeholder-data">In review</span></td>
+              <td class="td-muted placeholder-data">4 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Chloe A."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">6</span></td>
+              <td class="td-name placeholder-data">Mia K.</td>
+              <td><div class="td-score tier-mid">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-mid" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="36.76" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">64%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">1+ year</td>
+              <td class="td-strengths placeholder-data">Enthusiastic, strong work ethic, fast learner</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip warn"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 8h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill review placeholder-data">In review</span></td>
+              <td class="td-muted placeholder-data">4 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Mia K."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">7</span></td>
+              <td class="td-name placeholder-data">Ava D.</td>
+              <td><div class="td-score tier-mid">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-mid" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="40.84" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">60%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">1+ year</td>
+              <td class="td-strengths placeholder-data">Friendly, team player, good communicator</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip warn"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 8h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill review placeholder-data">In review</span></td>
+              <td class="td-muted placeholder-data">4 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Ava D."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">8</span></td>
+              <td class="td-name placeholder-data">James W.</td>
+              <td><div class="td-score tier-mid">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-mid" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="42.87" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">58%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">2+ years</td>
+              <td class="td-strengths placeholder-data">Barista experience, latte art, reliable</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip warn"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 8h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill review placeholder-data">In review</span></td>
+              <td class="td-muted placeholder-data">5 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open James W."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">9</span></td>
+              <td class="td-name placeholder-data">Zoe S.</td>
+              <td><div class="td-score tier-mid">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-mid" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="45.95" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">54%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">6+ months</td>
+              <td class="td-strengths placeholder-data">Passionate about coffee, keen to learn</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip warn"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 8h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill not placeholder-data">Not shortlisted</span></td>
+              <td class="td-muted placeholder-data">5 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Zoe S."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+            <tr>
+              <td><span class="rank-pill">10</span></td>
+              <td class="td-name placeholder-data">Lucas G.</td>
+              <td><div class="td-score tier-low">
+                <svg width="36" height="36" viewBox="0 0 36 36" class="ringchart tier-low" aria-hidden="true">
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-track" stroke-width="3.5"/>
+                  <circle cx="18" cy="18" r="16.25" fill="none" class="ring-fill" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="102.1" stroke-dashoffset="53.09" transform="rotate(-90 18 18)"/>
+                </svg>
+                <span class="placeholder-data">48%</span>
+              </div></td>
+              <td class="td-muted placeholder-data">6+ months</td>
+              <td class="td-strengths placeholder-data">Hard working, available weekends</td>
+              <td><div class="cert-row">
+                <span class="cert-chip ok"><span class="placeholder-data">Food Safety Cert</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5 8.5l2 2 4-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+                <span class="cert-chip warn"><span class="placeholder-data">First Aid</span><span class="cert-chip-dot"><svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 8h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span></span>
+              </div></td>
+              <td><span class="status-pill not placeholder-data">Not shortlisted</span></td>
+              <td class="td-muted placeholder-data">5 days ago</td>
+              <td><a class="td-chev" href="applicant.html" aria-label="Open Lucas G."><span data-icon="chevron-right"></span></a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <footer class="applicants-foot">
+          <div class="t-muted placeholder-data">Showing 1 to 10 of 84 applicants</div>
+          <nav class="pagination" aria-label="Pagination">
+            <button class="pg-btn" disabled aria-label="Previous"><span data-icon="chevron-left"></span></button>
+            <button class="pg-btn active" aria-current="page">1</button>
+            <button class="pg-btn">2</button>
+            <button class="pg-btn">3</button>
+            <span class="pg-ellipsis">…</span>
+            <button class="pg-btn">9</button>
+            <button class="pg-btn" aria-label="Next"><span data-icon="chevron-right"></span></button>
+          </nav>
+        </footer>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>

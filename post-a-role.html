@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post a role · Fern</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="wizard-shell">
+
+  <header class="wizard-top">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-mark.png" alt="Fern" width="24" height="24"/>
+      <div class="name">Fern</div>
+    </a>
+    <a class="exit" href="dashboard.html">Save &amp; exit →</a>
+  </header>
+
+  <!-- Progress track: 5 visible steps (done step hidden from track) -->
+  <div class="wizard-track">
+    <div class="pip active"><span></span></div>
+    <div class="pip"><span></span></div>
+    <div class="pip"><span></span></div>
+    <div class="pip"><span></span></div>
+    <div class="pip"><span></span></div>
+  </div>
+
+  <!-- id="post-role-form" on the stage for backend wiring -->
+  <main class="wizard-stage" id="post-role-form">
+
+    <!-- ===== Step 0 · Pick role type ===== -->
+    <div class="wizard-step active" id="wizard-step-role">
+      <div class="wizard-step-eyebrow">Step one of five</div>
+      <h1 class="wizard-h1">What are you hiring for?</h1>
+      <p class="wizard-sub">Pick the closest match — we'll let you tweak the details next. If nothing fits, choose "Something else" and write it in your own words.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <button type="button" class="card role-template-btn" data-template="barista" data-label="Barista">
+          <div class="role-template-icon"><span data-icon="coffee"></span></div>
+          <div class="role-template-label">Barista</div>
+        </button>
+        <button type="button" class="card role-template-btn" data-template="foh" data-label="Front of house">
+          <div class="role-template-icon"><span data-icon="utensils"></span></div>
+          <div class="role-template-label">Front of house</div>
+        </button>
+        <button type="button" class="card role-template-btn" data-template="chef" data-label="Chef · cook">
+          <div class="role-template-icon"><span data-icon="chef-hat"></span></div>
+          <div class="role-template-label">Chef · cook</div>
+        </button>
+        <button type="button" class="card role-template-btn" data-template="childcare" data-label="Childcare educator">
+          <div class="role-template-icon"><span data-icon="baby"></span></div>
+          <div class="role-template-label">Childcare educator</div>
+        </button>
+        <button type="button" class="card role-template-btn" data-template="reception" data-label="Receptionist">
+          <div class="role-template-icon"><span data-icon="phone"></span></div>
+          <div class="role-template-label">Receptionist</div>
+        </button>
+        <button type="button" class="card role-template-btn" data-template="support" data-label="Healthcare support">
+          <div class="role-template-icon"><span data-icon="heart-handshake"></span></div>
+          <div class="role-template-label">Healthcare support</div>
+        </button>
+        <button type="button" class="card role-template-btn" data-template="retail" data-label="Retail assistant">
+          <div class="role-template-icon"><span data-icon="shopping-bag"></span></div>
+          <div class="role-template-label">Retail assistant</div>
+        </button>
+        <button type="button" class="card role-template-btn" data-template="trades" data-label="Trades">
+          <div class="role-template-icon"><span data-icon="hammer"></span></div>
+          <div class="role-template-label">Trades</div>
+        </button>
+        <button type="button" class="card role-template-btn" data-template="custom" data-label="">
+          <div class="role-template-icon"><span data-icon="plus"></span></div>
+          <div class="role-template-label">Something else</div>
+        </button>
+      </div>
+
+      <div class="wizard-actions">
+        <div class="meta">Takes about 5 minutes from here.</div>
+        <button class="btn btn-primary" id="step1-continue" disabled>Continue <span data-icon="arrow-right"></span></button>
+      </div>
+    </div>
+
+    <!-- ===== Step 1 · Role details ===== -->
+    <div class="wizard-step" id="wizard-step-details">
+      <div class="wizard-step-eyebrow">Step two of five</div>
+      <h1 class="wizard-h1">Tell us about <em>the role.</em></h1>
+      <p class="wizard-sub">Plain English is fine — we read it the way you'd describe it to a friend.</p>
+
+      <div class="field-group">
+        <div class="field">
+          <label for="field-title">Job title <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="field-title" name="field-title" placeholder="e.g. Weekend barista" autocomplete="off"/>
+          <div class="field-error" id="err-title" role="alert" style="display:none">Please enter a job title to continue.</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="field">
+            <label for="field-location">Location <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="field-location" name="field-location" placeholder="Auckland" autocomplete="off"/>
+            <div class="field-error" id="err-location" role="alert" style="display:none">Please enter a location to continue.</div>
+          </div>
+          <div class="field">
+            <label for="field-worktype">Work type</label>
+            <select id="field-worktype" name="field-worktype">
+              <option>Full-time</option>
+              <option>Part-time</option>
+              <option>Casual</option>
+              <option>Fixed-term</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Years of experience needed</label>
+          <div class="chip-group">
+            <button type="button" class="chip exp-chip" data-value="0">No minimum</button>
+            <button type="button" class="chip exp-chip" data-value="1">1 year</button>
+            <button type="button" class="chip exp-chip selected" data-value="2">2 years</button>
+            <button type="button" class="chip exp-chip" data-value="3">3 years</button>
+            <button type="button" class="chip exp-chip" data-value="5+">5+ years</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Weekend availability?</label>
+          <div class="chip-group">
+            <button type="button" class="chip weekend-chip selected" data-value="yes">Required</button>
+            <button type="button" class="chip weekend-chip" data-value="no">Optional</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="field-description">Anything specific you want Fern to look for?</label>
+          <textarea id="field-description" name="field-description" placeholder="e.g. Experience in a high-volume café. Comfortable with latte art. Reliable for early starts. Bonus if they speak Spanish."></textarea>
+          <div class="help">Optional — but the more you say, the better the shortlist.</div>
+        </div>
+      </div>
+
+      <div class="wizard-actions">
+        <button class="btn btn-tertiary" data-wizard-back><span data-icon="arrow-left"></span> Back</button>
+        <button class="btn btn-primary" id="step2-continue">Continue <span data-icon="arrow-right"></span></button>
+      </div>
+    </div>
+
+    <!-- ===== Step 2 · Certifications ===== -->
+    <div class="wizard-step" id="wizard-step-certs">
+      <div class="wizard-step-eyebrow">Step three of five</div>
+      <h1 class="wizard-h1">Which certifications are <em>must-haves?</em></h1>
+      <p class="wizard-sub">We'll hard-filter on these. If a candidate doesn't have one, we'll flag it clearly before you interview.</p>
+
+      <!-- TODO: Replace with Airtable API call — cert list per role template -->
+      <div class="field">
+        <label id="cert-group-label">Common for this role</label>
+        <div class="cert-chip-group" aria-labelledby="cert-group-label">
+
+          <div class="cert-chip-cell">
+            <button type="button" class="chip cert-chip-toggle">Food Safety Certificate</button>
+            <div class="cert-weight" role="group" aria-label="How important is Food Safety Certificate?" hidden>
+              <div class="cert-weight-label">How important?</div>
+              <div class="cert-weight-row">
+                <button type="button" class="cert-weight-dot" data-weight="1" title="Nice to have">1</button>
+                <button type="button" class="cert-weight-dot" data-weight="2" title="Somewhat important">2</button>
+                <button type="button" class="cert-weight-dot" data-weight="3" title="Important">3</button>
+                <button type="button" class="cert-weight-dot" data-weight="4" title="Very important">4</button>
+                <button type="button" class="cert-weight-dot" data-weight="5" title="Essential — must have">5</button>
+              </div>
+              <div class="cert-weight-caption">Important</div>
+            </div>
+          </div>
+
+          <div class="cert-chip-cell">
+            <button type="button" class="chip cert-chip-toggle">First Aid</button>
+            <div class="cert-weight" role="group" aria-label="How important is First Aid?" hidden>
+              <div class="cert-weight-label">How important?</div>
+              <div class="cert-weight-row">
+                <button type="button" class="cert-weight-dot" data-weight="1" title="Nice to have">1</button>
+                <button type="button" class="cert-weight-dot" data-weight="2" title="Somewhat important">2</button>
+                <button type="button" class="cert-weight-dot" data-weight="3" title="Important">3</button>
+                <button type="button" class="cert-weight-dot" data-weight="4" title="Very important">4</button>
+                <button type="button" class="cert-weight-dot" data-weight="5" title="Essential — must have">5</button>
+              </div>
+              <div class="cert-weight-caption">Important</div>
+            </div>
+          </div>
+
+          <div class="cert-chip-cell">
+            <button type="button" class="chip cert-chip-toggle">Barista training</button>
+            <div class="cert-weight" role="group" aria-label="How important is Barista training?" hidden>
+              <div class="cert-weight-label">How important?</div>
+              <div class="cert-weight-row">
+                <button type="button" class="cert-weight-dot" data-weight="1" title="Nice to have">1</button>
+                <button type="button" class="cert-weight-dot" data-weight="2" title="Somewhat important">2</button>
+                <button type="button" class="cert-weight-dot" data-weight="3" title="Important">3</button>
+                <button type="button" class="cert-weight-dot" data-weight="4" title="Very important">4</button>
+                <button type="button" class="cert-weight-dot" data-weight="5" title="Essential — must have">5</button>
+              </div>
+              <div class="cert-weight-caption">Important</div>
+            </div>
+          </div>
+
+          <div class="cert-chip-cell">
+            <button type="button" class="chip cert-chip-toggle">LCQ (alcohol)</button>
+            <div class="cert-weight" role="group" aria-label="How important is LCQ?" hidden>
+              <div class="cert-weight-label">How important?</div>
+              <div class="cert-weight-row">
+                <button type="button" class="cert-weight-dot" data-weight="1" title="Nice to have">1</button>
+                <button type="button" class="cert-weight-dot" data-weight="2" title="Somewhat important">2</button>
+                <button type="button" class="cert-weight-dot" data-weight="3" title="Important">3</button>
+                <button type="button" class="cert-weight-dot" data-weight="4" title="Very important">4</button>
+                <button type="button" class="cert-weight-dot" data-weight="5" title="Essential — must have">5</button>
+              </div>
+              <div class="cert-weight-caption">Important</div>
+            </div>
+          </div>
+
+          <div class="cert-chip-cell">
+            <button type="button" class="chip cert-chip-toggle">WWCC</button>
+            <div class="cert-weight" role="group" aria-label="How important is WWCC?" hidden>
+              <div class="cert-weight-label">How important?</div>
+              <div class="cert-weight-row">
+                <button type="button" class="cert-weight-dot" data-weight="1" title="Nice to have">1</button>
+                <button type="button" class="cert-weight-dot" data-weight="2" title="Somewhat important">2</button>
+                <button type="button" class="cert-weight-dot" data-weight="3" title="Important">3</button>
+                <button type="button" class="cert-weight-dot" data-weight="4" title="Very important">4</button>
+                <button type="button" class="cert-weight-dot" data-weight="5" title="Essential — must have">5</button>
+              </div>
+              <div class="cert-weight-caption">Important</div>
+            </div>
+          </div>
+
+          <div class="cert-chip-cell">
+            <button type="button" class="chip cert-chip-toggle">Driver's Licence</button>
+            <div class="cert-weight" role="group" aria-label="How important is Driver's Licence?" hidden>
+              <div class="cert-weight-label">How important?</div>
+              <div class="cert-weight-row">
+                <button type="button" class="cert-weight-dot" data-weight="1" title="Nice to have">1</button>
+                <button type="button" class="cert-weight-dot" data-weight="2" title="Somewhat important">2</button>
+                <button type="button" class="cert-weight-dot" data-weight="3" title="Important">3</button>
+                <button type="button" class="cert-weight-dot" data-weight="4" title="Very important">4</button>
+                <button type="button" class="cert-weight-dot" data-weight="5" title="Essential — must have">5</button>
+              </div>
+              <div class="cert-weight-caption">Important</div>
+            </div>
+          </div>
+
+          <div class="cert-chip-cell">
+            <button type="button" class="chip cert-chip-toggle">Right to work in NZ</button>
+            <div class="cert-weight" role="group" aria-label="How important is Right to work in NZ?" hidden>
+              <div class="cert-weight-label">How important?</div>
+              <div class="cert-weight-row">
+                <button type="button" class="cert-weight-dot" data-weight="1" title="Nice to have">1</button>
+                <button type="button" class="cert-weight-dot" data-weight="2" title="Somewhat important">2</button>
+                <button type="button" class="cert-weight-dot" data-weight="3" title="Important">3</button>
+                <button type="button" class="cert-weight-dot" data-weight="4" title="Very important">4</button>
+                <button type="button" class="cert-weight-dot" data-weight="5" title="Essential — must have">5</button>
+              </div>
+              <div class="cert-weight-caption">Important</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Custom cert add -->
+      <div class="field" style="margin-top:18px">
+        <label>Add another</label>
+        <div style="display:flex;gap:10px">
+          <input type="text" id="custom-cert-input" placeholder="e.g. NZ driver's licence" autocomplete="off"/>
+          <button type="button" class="btn btn-secondary" id="add-cert-btn">Add</button>
+        </div>
+        <div class="help">No certification needed? Leave this blank — Fern will still rank by experience and fit.</div>
+      </div>
+      <!-- Custom cert chips appended here by JS -->
+      <div id="custom-cert-chips" class="cert-chip-group" style="margin-top:12px" role="list" aria-label="Custom certifications"></div>
+
+      <div class="wizard-actions">
+        <button class="btn btn-tertiary" data-wizard-back><span data-icon="arrow-left"></span> Back</button>
+        <button class="btn btn-primary" id="step3-continue">Continue <span data-icon="arrow-right"></span></button>
+      </div>
+    </div>
+
+    <!-- ===== Step 3 · Review ===== -->
+    <div class="wizard-step" id="wizard-step-review">
+      <div class="wizard-step-eyebrow">Step four of five</div>
+      <h1 class="wizard-h1">Looks right?</h1>
+      <p class="wizard-sub">Here's what we'll screen every application against. Tap any row to edit.</p>
+
+      <!-- TODO: Replace with Airtable API call — review data -->
+      <div class="review-list">
+        <div class="review-row">
+          <div class="k">Role</div>
+          <div class="v placeholder-data" id="review-role">Barista</div>
+          <button class="edit" data-goto-step="1">Edit</button>
+        </div>
+        <div class="review-row">
+          <div class="k">Location</div>
+          <div class="v placeholder-data" id="review-location">Auckland · Part-time</div>
+          <button class="edit" data-goto-step="1">Edit</button>
+        </div>
+        <div class="review-row">
+          <div class="k">Experience</div>
+          <div class="v placeholder-data" id="review-exp">2 years minimum</div>
+          <button class="edit" data-goto-step="1">Edit</button>
+        </div>
+        <div class="review-row">
+          <div class="k">Weekends</div>
+          <div class="v placeholder-data" id="review-weekend">Required</div>
+          <button class="edit" data-goto-step="1">Edit</button>
+        </div>
+        <div class="review-row">
+          <div class="k">Must-have certs</div>
+          <div class="v muted placeholder-data" id="review-certs">None set</div>
+          <button class="edit" data-goto-step="2">Edit</button>
+        </div>
+        <div class="review-row">
+          <div class="k">Notes</div>
+          <div class="v muted placeholder-data" id="review-notes">No extra notes</div>
+          <button class="edit" data-goto-step="1">Edit</button>
+        </div>
+      </div>
+
+      <div class="card tinted" style="margin-top:8px">
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <div style="width:32px;height:32px;border-radius:999px;background:var(--paper);display:flex;align-items:center;justify-content:center;color:var(--forest);flex-shrink:0"><span data-icon="leaf"></span></div>
+          <div>
+            <div style="font-family:var(--font-display);font-weight:500;font-size:20px;line-height:1.25;margin-bottom:4px">What happens next</div>
+            <div style="font-size:14px;color:var(--fg-1);line-height:1.55">We'll post the role and start reading applications the moment they arrive. Your shortlist email lands within an hour of the first batch — usually before you've finished your second coffee.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wizard-actions">
+        <button class="btn btn-tertiary" data-wizard-back><span data-icon="arrow-left"></span> Back</button>
+        <button class="btn btn-primary" id="step4-continue">Looks right · go to pay <span data-icon="arrow-right"></span></button>
+      </div>
+    </div>
+
+    <!-- ===== Step 4 · Pay ===== -->
+    <div class="wizard-step" id="wizard-step-pay">
+      <div class="wizard-step-eyebrow">Step five of five</div>
+      <h1 class="wizard-h1">Pick a plan and <em>post it.</em></h1>
+      <p class="wizard-sub">No subscription. Charged once. Switch tiers any time you like.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px">
+        <button type="button" class="card plan-btn" data-plan="single"
+          style="text-align:left;padding:20px 22px;cursor:pointer">
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-2);font-weight:500">Single listing</div>
+          <div style="font-family:var(--font-display);font-size:36px;font-weight:500;color:var(--forest);letter-spacing:-0.01em;margin-top:8px;line-height:1">$49</div>
+          <div style="font-size:12px;color:var(--fg-2);margin-top:8px;line-height:1.4">One role · pay as you go</div>
+        </button>
+        <button type="button" class="card plan-btn selected" data-plan="5pack"
+          style="text-align:left;padding:20px 22px;cursor:pointer;border:1.5px solid var(--forest);background:var(--sage-pale)">
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-2);font-weight:500">5-pack</div>
+          <div style="font-family:var(--font-display);font-size:36px;font-weight:500;color:var(--forest);letter-spacing:-0.01em;margin-top:8px;line-height:1">$195</div>
+          <div style="font-size:12px;color:var(--fg-2);margin-top:8px;line-height:1.4">$39/role · best for a couple hires a year</div>
+        </button>
+        <button type="button" class="card plan-btn" data-plan="20pack"
+          style="text-align:left;padding:20px 22px;cursor:pointer">
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-2);font-weight:500">20-pack</div>
+          <div style="font-family:var(--font-display);font-size:36px;font-weight:500;color:var(--forest);letter-spacing:-0.01em;margin-top:8px;line-height:1">$580</div>
+          <div style="font-size:12px;color:var(--fg-2);margin-top:8px;line-height:1.4">$29/role · high turnover or multi-site</div>
+        </button>
+      </div>
+
+      <div class="field-group" style="margin-bottom:28px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="field">
+            <label for="pay-name">Your name</label>
+            <input type="text" id="pay-name" name="pay-name" placeholder="e.g. Karen Mahuta" autocomplete="name"/>
+          </div>
+          <div class="field">
+            <label for="pay-email">Email for the shortlist</label>
+            <input type="email" id="pay-email" name="pay-email" placeholder="you@yourcafé.co.nz" autocomplete="email"/>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Card details</label>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px">
+            <input type="text" placeholder="0000 0000 0000 0000" disabled style="opacity:0.6"/>
+            <input type="text" placeholder="MM / YY" disabled style="opacity:0.6"/>
+            <input type="text" placeholder="CVC" disabled style="opacity:0.6"/>
+          </div>
+          <div class="help">Card fields are illustrative — we use Stripe in the real product.</div>
+        </div>
+      </div>
+
+      <div style="padding:20px 24px;background:var(--cream-soft);border:1px solid var(--border-1);border-radius:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <div>
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-2);font-weight:500">Total today</div>
+          <div style="font-size:12px;color:var(--fg-2);margin-top:2px">5-pack · GST included</div>
+        </div>
+        <div id="pay-total-price" style="font-family:var(--font-display);font-size:36px;font-weight:500;color:var(--forest);letter-spacing:-0.01em;line-height:1">$195</div>
+      </div>
+
+      <div class="wizard-actions">
+        <button class="btn btn-tertiary" data-wizard-back><span data-icon="arrow-left"></span> Back</button>
+        <button class="btn btn-primary btn-lg" id="pay-submit-btn">
+          Pay $195 &amp; post the role <span data-icon="arrow-right"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== Step 5 · Done ===== -->
+    <div class="wizard-step" id="wizard-step-done">
+      <div class="rise done-stage">
+        <div class="leafmark"><span data-icon="leaf"></span></div>
+        <h1>Done.<br/><em>Your role's live.</em></h1>
+        <p class="lead">
+          We're already reading the first applications. Your shortlist email lands at
+          <b id="done-email" style="color:var(--forest)">your inbox</b>
+          within the hour. We'll send a follow-up tomorrow with anyone new worth meeting.
+        </p>
+        <div class="receipt">
+          <div>
+            <div class="k">Your role</div>
+            <div class="v placeholder-data" id="done-role">Barista</div>
+          </div>
+          <div style="text-align:right">
+            <div class="k">Ref</div>
+            <div class="v placeholder-data" id="done-ref">#FRN-00000</div>
+          </div>
+        </div>
+        <div class="done-ctas">
+          <a class="btn btn-primary" href="dashboard.html">Go to dashboard <span data-icon="arrow-right"></span></a>
+          <a class="btn btn-secondary" href="post-a-role.html">Post another role</a>
+        </div>
+        <div class="done-foot">— Tama &amp; the Fern team</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="main.js" defer></script>
+</body>
+</html>

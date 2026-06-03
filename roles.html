@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fern · Roles</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="app-shell">
+  <!-- ===== Sidebar ===== -->
+  <aside class="app-side">
+    <a class="app-side-brand" href="dashboard.html">
+      <span class="app-side-mark" aria-hidden="true"></span>
+      <span>Fern</span>
+    </a>
+    <nav class="app-side-nav" aria-label="App navigation">
+      <a class="app-side-link" href="dashboard.html"><span data-icon="layout-dashboard"></span><span>Dashboard</span></a>
+      <a class="app-side-link" href="post-a-role.html"><span data-icon="plus"></span><span>Post a role</span></a>
+      <a class="app-side-link" href="shortlist.html"><span data-icon="users"></span><span>Applicants</span></a>
+      <a class="app-side-link" href="shortlist.html"><span data-icon="star"></span><span>Shortlist</span></a>
+      <a class="app-side-link active" href="roles.html"><span data-icon="briefcase"></span><span>Roles</span></a>
+      <div class="app-side-rule"></div>
+      <a class="app-side-link" href="#"><span data-icon="bar-chart-3"></span><span>Insights</span></a>
+      <a class="app-side-link" href="#"><span data-icon="settings"></span><span>Account</span></a>
+    </nav>
+    <div class="app-side-callout">
+      <p>We go through hundreds of applications so you don't have to.<em>That's the whole idea.</em></p>
+      <div class="app-side-callout-mark" aria-hidden="true"></div>
+    </div>
+  </aside>
+
+  <!-- ===== Main ===== -->
+  <div class="app-main">
+    <header class="app-topbar">
+      <div class="app-topbar-titles">
+        <h1 class="app-title">Roles</h1>
+        <p class="app-sub">Manage your active, closed, and saved job listings.</p>
+      </div>
+      <div class="app-topbar-meta">
+        <a class="btn btn-primary" href="post-a-role.html"><span data-icon="plus"></span> Post a role</a>
+        <a class="app-user-chip" href="#">
+          <div class="avatar" aria-hidden="true">SP</div>
+          <span class="name placeholder-data">Sarah P.</span>
+          <span data-icon="chevron-down"></span>
+        </a>
+      </div>
+    </header>
+
+    <main class="app-content">
+
+      <!-- Role filter tabs -->
+      <div class="roles-tabs" role="tablist" aria-label="Filter roles">
+        <button class="roles-tab active" role="tab" aria-selected="true">All roles <span class="roles-tab-count placeholder-data">10</span></button>
+        <button class="roles-tab" role="tab" aria-selected="false">Active <span class="roles-tab-count placeholder-data">3</span></button>
+        <button class="roles-tab" role="tab" aria-selected="false">Reviewing <span class="roles-tab-count placeholder-data">1</span></button>
+        <button class="roles-tab" role="tab" aria-selected="false">Closed <span class="roles-tab-count placeholder-data">4</span></button>
+        <button class="roles-tab" role="tab" aria-selected="false">Saved <span class="roles-tab-count placeholder-data">7</span></button>
+      </div>
+
+      <!-- TODO: Replace with Airtable API call — roles list -->
+      <div class="roles-grid">
+
+        <!-- Active roles -->
+        <article class="role-card">
+          <div class="role-card-head">
+            <div class="role-card-icon" aria-hidden="true"><span data-icon="coffee"></span></div>
+            <div class="role-card-info">
+              <h2 class="role-card-title placeholder-data">Barista</h2>
+              <div class="role-card-meta placeholder-data">Ponsonby Café · Full-time</div>
+            </div>
+            <span class="role-status-pill status-active">Active</span>
+          </div>
+          <div class="role-card-stats">
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">84</span>
+              <span class="role-stat-lbl">applicants</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">3</span>
+              <span class="role-stat-lbl">shortlisted</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">3d</span>
+              <span class="role-stat-lbl">posted</span>
+            </div>
+          </div>
+          <div class="role-card-actions">
+            <a class="btn btn-primary" href="shortlist.html">View shortlist</a>
+            <a class="btn btn-secondary" href="post-a-role.html">Edit</a>
+            <button class="btn btn-ghost role-card-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+          </div>
+        </article>
+
+        <article class="role-card">
+          <div class="role-card-head">
+            <div class="role-card-icon" aria-hidden="true"><span data-icon="utensils"></span></div>
+            <div class="role-card-info">
+              <h2 class="role-card-title placeholder-data">Front of House</h2>
+              <div class="role-card-meta placeholder-data">Grey Lynn Bistro · Part-time</div>
+            </div>
+            <span class="role-status-pill status-active">Active</span>
+          </div>
+          <div class="role-card-stats">
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">47</span>
+              <span class="role-stat-lbl">applicants</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">5</span>
+              <span class="role-stat-lbl">shortlisted</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">1d</span>
+              <span class="role-stat-lbl">posted</span>
+            </div>
+          </div>
+          <div class="role-card-actions">
+            <a class="btn btn-primary" href="shortlist.html">View shortlist</a>
+            <a class="btn btn-secondary" href="post-a-role.html">Edit</a>
+            <button class="btn btn-ghost role-card-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+          </div>
+        </article>
+
+        <article class="role-card">
+          <div class="role-card-head">
+            <div class="role-card-icon" aria-hidden="true"><span data-icon="baby"></span></div>
+            <div class="role-card-info">
+              <h2 class="role-card-title placeholder-data">Childcare Worker</h2>
+              <div class="role-card-meta placeholder-data">Bright Futures Childcare · Full-time</div>
+            </div>
+            <span class="role-status-pill status-active">Active</span>
+          </div>
+          <div class="role-card-stats">
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">31</span>
+              <span class="role-stat-lbl">applicants</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">2</span>
+              <span class="role-stat-lbl">shortlisted</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">6h</span>
+              <span class="role-stat-lbl">posted</span>
+            </div>
+          </div>
+          <div class="role-card-actions">
+            <a class="btn btn-primary" href="shortlist.html">View shortlist</a>
+            <a class="btn btn-secondary" href="post-a-role.html">Edit</a>
+            <button class="btn btn-ghost role-card-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+          </div>
+        </article>
+
+        <!-- Reviewing -->
+        <article class="role-card role-card-reviewing">
+          <div class="role-card-head">
+            <div class="role-card-icon" aria-hidden="true"><span data-icon="chef-hat"></span></div>
+            <div class="role-card-info">
+              <h2 class="role-card-title placeholder-data">Kitchen Hand</h2>
+              <div class="role-card-meta placeholder-data">Ponsonby Café · Casual</div>
+            </div>
+            <span class="role-status-pill status-reviewing">Reviewing</span>
+          </div>
+          <div class="role-card-reviewing-note">
+            <span data-icon="sparkles"></span>
+            <span class="placeholder-data">Fern is processing 23 new applications. Shortlist usually ready in 24 hours.</span>
+          </div>
+          <div class="role-card-actions">
+            <button class="btn btn-secondary" disabled>Shortlist pending…</button>
+            <a class="btn btn-secondary" href="post-a-role.html">Edit</a>
+            <button class="btn btn-ghost role-card-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+          </div>
+        </article>
+
+        <!-- Closed roles -->
+        <article class="role-card role-card-closed">
+          <div class="role-card-head">
+            <div class="role-card-icon" aria-hidden="true"><span data-icon="coffee"></span></div>
+            <div class="role-card-info">
+              <h2 class="role-card-title placeholder-data">Barista</h2>
+              <div class="role-card-meta placeholder-data">Ponsonby Café · Full-time · Closed Mar 2025</div>
+            </div>
+            <span class="role-status-pill status-closed">Closed</span>
+          </div>
+          <div class="role-card-stats">
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">62</span>
+              <span class="role-stat-lbl">applicants</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">4</span>
+              <span class="role-stat-lbl">interviewed</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">1</span>
+              <span class="role-stat-lbl">hired</span>
+            </div>
+          </div>
+          <div class="role-card-actions">
+            <a class="btn btn-secondary" href="post-a-role.html">Repost role</a>
+            <button class="btn btn-ghost role-card-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+          </div>
+        </article>
+
+        <article class="role-card role-card-closed">
+          <div class="role-card-head">
+            <div class="role-card-icon" aria-hidden="true"><span data-icon="utensils"></span></div>
+            <div class="role-card-info">
+              <h2 class="role-card-title placeholder-data">Front of House</h2>
+              <div class="role-card-meta placeholder-data">Grey Lynn Bistro · Part-time · Closed Jan 2025</div>
+            </div>
+            <span class="role-status-pill status-closed">Closed</span>
+          </div>
+          <div class="role-card-stats">
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">38</span>
+              <span class="role-stat-lbl">applicants</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">3</span>
+              <span class="role-stat-lbl">interviewed</span>
+            </div>
+            <div class="role-stat">
+              <span class="role-stat-num placeholder-data">2</span>
+              <span class="role-stat-lbl">hired</span>
+            </div>
+          </div>
+          <div class="role-card-actions">
+            <a class="btn btn-secondary" href="post-a-role.html">Repost role</a>
+            <button class="btn btn-ghost role-card-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+          </div>
+        </article>
+
+        <!-- Saved / draft roles -->
+        <article class="role-card role-card-saved">
+          <div class="role-card-head">
+            <div class="role-card-icon" aria-hidden="true"><span data-icon="bookmark"></span></div>
+            <div class="role-card-info">
+              <h2 class="role-card-title placeholder-data">Barista – Weekend Cover</h2>
+              <div class="role-card-meta placeholder-data">Ponsonby Café · Casual · Draft</div>
+            </div>
+            <span class="role-status-pill status-saved">Saved</span>
+          </div>
+          <div class="role-card-actions">
+            <a class="btn btn-primary" href="post-a-role.html">Post this role</a>
+            <button class="btn btn-secondary">Edit draft</button>
+            <button class="btn btn-ghost role-card-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+          </div>
+        </article>
+
+        <article class="role-card role-card-saved">
+          <div class="role-card-head">
+            <div class="role-card-icon" aria-hidden="true"><span data-icon="heart-handshake"></span></div>
+            <div class="role-card-info">
+              <h2 class="role-card-title placeholder-data">Nanny – School Hours</h2>
+              <div class="role-card-meta placeholder-data">Private · Part-time · Draft</div>
+            </div>
+            <span class="role-status-pill status-saved">Saved</span>
+          </div>
+          <div class="role-card-actions">
+            <a class="btn btn-primary" href="post-a-role.html">Post this role</a>
+            <button class="btn btn-secondary">Edit draft</button>
+            <button class="btn btn-ghost role-card-more" aria-label="More actions"><span data-icon="more-vertical"></span></button>
+          </div>
+        </article>
+
+        <!-- Post new role CTA card -->
+        <article class="role-card role-card-new">
+          <div class="role-card-new-inner">
+            <div class="role-card-new-icon" aria-hidden="true"><span data-icon="plus"></span></div>
+            <h3 class="role-card-new-title">Post a new role</h3>
+            <p class="role-card-new-sub">Get your next shortlist in under 48 hours.</p>
+            <a class="btn btn-primary" href="post-a-role.html">Post a role</a>
+          </div>
+        </article>
+
+      </div><!-- /.roles-grid -->
+
+    </main>
+  </div><!-- /.app-main -->
+</div><!-- /.app-shell -->
+
+<script src="main.js" defer></script>
+</body>
+</html>

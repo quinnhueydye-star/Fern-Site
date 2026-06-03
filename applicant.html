@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fern · Emma R. – Applicant</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="app-shell">
+  <!-- ===== Sidebar ===== -->
+  <aside class="app-side">
+    <a class="app-side-brand" href="dashboard.html">
+      <span class="app-side-mark" aria-hidden="true"></span>
+      <span>Fern</span>
+    </a>
+    <nav class="app-side-nav" aria-label="App navigation">
+      <a class="app-side-link" href="dashboard.html"><span data-icon="layout-dashboard"></span><span>Dashboard</span></a>
+      <a class="app-side-link" href="post-a-role.html"><span data-icon="plus"></span><span>Post a role</span></a>
+      <a class="app-side-link active" href="shortlist.html"><span data-icon="users"></span><span>Applicants</span></a>
+      <a class="app-side-link" href="shortlist.html"><span data-icon="star"></span><span>Shortlist</span></a>
+      <a class="app-side-link" href="roles.html"><span data-icon="briefcase"></span><span>Roles</span></a>
+      <div class="app-side-rule"></div>
+      <a class="app-side-link" href="#"><span data-icon="bar-chart-3"></span><span>Insights</span></a>
+      <a class="app-side-link" href="#"><span data-icon="settings"></span><span>Account</span></a>
+    </nav>
+    <div class="app-side-callout">
+      <p>We go through hundreds of applications so you don't have to.<em>That's the whole idea.</em></p>
+      <div class="app-side-callout-mark" aria-hidden="true"></div>
+    </div>
+  </aside>
+
+  <!-- ===== Main ===== -->
+  <div class="app-main">
+    <header class="app-topbar">
+      <div class="app-topbar-titles">
+        <a class="back-link" href="shortlist.html"><span data-icon="arrow-left"></span> Back to shortlist</a>
+        <h1 class="app-title"><span class="placeholder-data">Emma R.</span></h1>
+        <p class="app-sub"><span class="placeholder-data">Barista – Ponsonby Café</span></p>
+      </div>
+      <div class="app-topbar-meta">
+        <a class="app-roles-pill" href="roles.html"><span class="placeholder-data">3 roles active</span></a>
+        <a class="app-user-chip" href="#">
+          <div class="avatar" aria-hidden="true">SP</div>
+          <span class="name placeholder-data">Sarah P.</span>
+          <span data-icon="chevron-down"></span>
+        </a>
+      </div>
+    </header>
+
+    <main class="app-content">
+
+      <!-- Applicant nav strip -->
+      <div class="applicant-nav-strip">
+        <a class="appl-nav-btn" href="#"><span data-icon="arrow-left"></span> <span class="placeholder-data">Liam T. – 84%</span></a>
+        <span class="appl-nav-pos placeholder-data">Applicant 1 of 84</span>
+        <a class="appl-nav-btn" href="#"><span class="placeholder-data">Sophie M. – 78%</span> <span data-icon="arrow-right"></span></a>
+      </div>
+
+      <div class="applicant-grid">
+
+        <!-- ===== Left column ===== -->
+        <div class="applicant-left">
+
+          <!-- Profile header -->
+          <!-- TODO: Replace with Airtable API call — applicant profile -->
+          <article class="profile-card">
+            <div class="profile-card-top">
+              <div class="profile-avatar-wrap">
+                <div class="profile-avatar" aria-hidden="true"><span class="placeholder-data">ER</span></div>
+                <span class="profile-tier-badge tier-top" aria-label="Top match">
+                  <span data-icon="star"></span>
+                </span>
+              </div>
+              <div class="profile-intro">
+                <h2 class="profile-name placeholder-data">Emma R.</h2>
+                <div class="profile-role placeholder-data">Applied for Barista – Ponsonby Café</div>
+                <div class="profile-meta">
+                  <span><span data-icon="map-pin"></span> <span class="placeholder-data">Ponsonby, Auckland</span></span>
+                  <span><span data-icon="mail"></span> <span class="placeholder-data">emma.r@email.com</span></span>
+                  <span><span data-icon="calendar"></span> <span class="placeholder-data">Applied 2 days ago</span></span>
+                </div>
+              </div>
+              <!-- Ring chart: size=108, stroke=5, r=51.5, c=323.5, offset=25.88 for 92% -->
+              <div class="profile-score-ring" aria-label="92% match score">
+                <svg width="108" height="108" viewBox="0 0 108 108" aria-hidden="true">
+                  <circle cx="54" cy="54" r="51.5" fill="none" stroke="var(--sage-pale)" stroke-width="5"/>
+                  <circle cx="54" cy="54" r="51.5" fill="none" stroke="var(--forest)" stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-dasharray="323.5"
+                    stroke-dashoffset="25.88"
+                    transform="rotate(-90 54 54)"/>
+                </svg>
+                <div class="profile-score-label">
+                  <div class="profile-score-num placeholder-data">92%</div>
+                  <div class="profile-score-sub">match</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-tags">
+              <span class="check-chip"><span data-icon="shield-check"></span> <span class="placeholder-data">Food Safety Cert</span></span>
+              <span class="check-chip"><span data-icon="heart-pulse"></span> <span class="placeholder-data">First Aid Cert</span></span>
+              <span class="check-chip"><span data-icon="briefcase"></span> <span class="placeholder-data">3+ years experience</span></span>
+              <span class="check-chip"><span data-icon="calendar-check"></span> <span class="placeholder-data">Weekend availability</span></span>
+              <span class="check-chip"><span data-icon="coffee"></span> <span class="placeholder-data">Latte art</span></span>
+              <span class="check-chip"><span data-icon="users"></span> <span class="placeholder-data">Customer service</span></span>
+              <span class="check-chip"><span data-icon="sparkles"></span> <span class="placeholder-data">Clean &amp; organised</span></span>
+            </div>
+
+            <div class="profile-actions">
+              <button class="btn btn-primary"><span data-icon="calendar-check"></span> Invite to interview</button>
+              <button class="btn btn-secondary"><span data-icon="download"></span> Download CV</button>
+              <button class="btn btn-ghost"><span data-icon="bookmark"></span> Save</button>
+            </div>
+          </article>
+
+          <!-- Fern summary -->
+          <!-- TODO: Replace with Airtable API call — AI summary -->
+          <article class="summary-card">
+            <div class="summary-card-head">
+              <span data-icon="sparkles"></span>
+              <h3>Fern's summary</h3>
+            </div>
+            <p class="placeholder-data">Emma is a strong candidate with over three years of café experience in busy Auckland venues. She holds a current Food Safety certificate and First Aid certificate, and has confirmed weekend availability. Her latte art skill and friendly customer manner were consistently mentioned in references. The only minor gap is that her most recent role ended in April 2024 — worth clarifying at interview.</p>
+          </article>
+
+          <!-- Pros and cons -->
+          <!-- TODO: Replace with Airtable API call — pros/cons analysis -->
+          <article class="proscons-card">
+            <div class="proscons-col pros">
+              <h4 class="proscons-head"><span data-icon="check"></span> Strengths</h4>
+              <ul class="proscons-list">
+                <li class="placeholder-data">Current Food Safety certificate on file</li>
+                <li class="placeholder-data">Current First Aid certificate on file</li>
+                <li class="placeholder-data">3+ years barista experience at high-volume cafés</li>
+                <li class="placeholder-data">Weekend and public holiday availability confirmed</li>
+                <li class="placeholder-data">Strong latte art skills and customer service background</li>
+              </ul>
+            </div>
+            <div class="proscons-col cons">
+              <h4 class="proscons-head"><span data-icon="more-vertical"></span> Watch points</h4>
+              <ul class="proscons-list">
+                <li class="placeholder-data">Left most recent role 6 weeks ago — reason not stated</li>
+                <li class="placeholder-data">No formal management experience</li>
+                <li class="placeholder-data">References not yet verified</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- ===== Right column ===== -->
+        <div class="applicant-right">
+
+          <!-- Score breakdown -->
+          <!-- TODO: Replace with Airtable API call — score breakdown -->
+          <article class="score-card" id="score-breakdown">
+            <h3 class="score-card-title">Score breakdown</h3>
+            <div class="score-rows">
+
+              <div class="score-row">
+                <div class="score-row-label">
+                  <span data-icon="shield-check"></span>
+                  <span class="placeholder-data">Food Safety Cert</span>
+                </div>
+                <div class="score-dots">
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                </div>
+                <span class="score-row-val placeholder-data">5/5</span>
+              </div>
+
+              <div class="score-row">
+                <div class="score-row-label">
+                  <span data-icon="heart-pulse"></span>
+                  <span class="placeholder-data">First Aid Cert</span>
+                </div>
+                <div class="score-dots">
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot"></span>
+                </div>
+                <span class="score-row-val placeholder-data">4/5</span>
+              </div>
+
+              <div class="score-row">
+                <div class="score-row-label">
+                  <span data-icon="coffee"></span>
+                  <span class="placeholder-data">Barista Experience</span>
+                </div>
+                <div class="score-dots">
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                </div>
+                <span class="score-row-val placeholder-data">5/5</span>
+              </div>
+
+              <div class="score-row">
+                <div class="score-row-label">
+                  <span data-icon="sparkles"></span>
+                  <span class="placeholder-data">Latte Art</span>
+                </div>
+                <div class="score-dots">
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot"></span>
+                </div>
+                <span class="score-row-val placeholder-data">4/5</span>
+              </div>
+
+              <div class="score-row">
+                <div class="score-row-label">
+                  <span data-icon="calendar-check"></span>
+                  <span class="placeholder-data">Weekend Availability</span>
+                </div>
+                <div class="score-dots">
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                  <span class="score-dot filled"></span>
+                </div>
+                <span class="score-row-val placeholder-data">5/5</span>
+              </div>
+
+            </div>
+            <div class="score-total">
+              <span>Overall match</span>
+              <span class="score-total-num tier-top placeholder-data">92%</span>
+            </div>
+          </article>
+
+          <!-- Work history -->
+          <!-- TODO: Replace with Airtable API call — applicant CV / work history -->
+          <article class="cv-card">
+            <h3 class="cv-card-title"><span data-icon="briefcase"></span> Work history</h3>
+            <div class="cv-entries">
+
+              <div class="cv-entry">
+                <div class="cv-entry-dot"></div>
+                <div class="cv-entry-body">
+                  <div class="cv-entry-role placeholder-data">Senior Barista</div>
+                  <div class="cv-entry-place placeholder-data">Daily Grind Café, Ponsonby</div>
+                  <div class="cv-entry-dates placeholder-data">Feb 2022 – Apr 2024 · 2 yrs 2 mo</div>
+                  <p class="cv-entry-desc placeholder-data">Lead barista at a 90-seat specialty coffee venue. Responsible for espresso bar quality, staff training on latte art, and opening/closing procedures. Served 300+ customers daily during peak periods.</p>
+                </div>
+              </div>
+
+              <div class="cv-entry">
+                <div class="cv-entry-dot"></div>
+                <div class="cv-entry-body">
+                  <div class="cv-entry-role placeholder-data">Barista</div>
+                  <div class="cv-entry-place placeholder-data">Little Bird Café, Grey Lynn</div>
+                  <div class="cv-entry-dates placeholder-data">Jun 2020 – Jan 2022 · 1 yr 7 mo</div>
+                  <p class="cv-entry-desc placeholder-data">Full café role covering espresso, filter coffee, and counter service in a plant-based café. Gained Food Safety certificate during tenure.</p>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- Uploaded documents -->
+          <!-- TODO: Replace with Airtable API call — attached documents -->
+          <article class="docs-card">
+            <h3 class="docs-card-title"><span data-icon="clipboard-list"></span> Documents</h3>
+            <div class="docs-list">
+              <div class="doc-row">
+                <span data-icon="shield-check"></span>
+                <div class="doc-row-body">
+                  <span class="doc-row-name placeholder-data">Food Safety Certificate</span>
+                  <span class="doc-row-meta placeholder-data">Uploaded · expires Dec 2025</span>
+                </div>
+                <a class="btn btn-ghost btn-sm" href="#"><span data-icon="download"></span> View</a>
+              </div>
+              <div class="doc-row">
+                <span data-icon="heart-pulse"></span>
+                <div class="doc-row-body">
+                  <span class="doc-row-name placeholder-data">First Aid Certificate</span>
+                  <span class="doc-row-meta placeholder-data">Uploaded · expires Jun 2026</span>
+                </div>
+                <a class="btn btn-ghost btn-sm" href="#"><span data-icon="download"></span> View</a>
+              </div>
+              <div class="doc-row">
+                <span data-icon="clipboard-list"></span>
+                <div class="doc-row-body">
+                  <span class="doc-row-name placeholder-data">CV / Resume</span>
+                  <span class="doc-row-meta placeholder-data">Uploaded · PDF · 2 pages</span>
+                </div>
+                <a class="btn btn-ghost btn-sm" href="#"><span data-icon="download"></span> View</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div><!-- /.applicant-grid -->
+    </main>
+  </div><!-- /.app-main -->
+</div><!-- /.app-shell -->
+
+<script src="main.js" defer></script>
+</body>
+</html>
